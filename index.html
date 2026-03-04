@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>RapidKey Acquizitions · happy modern wholesaling</title>
   <!-- Google Fonts & Font Awesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,23 +22,27 @@
       color: #2d3e50;
       line-height: 1.5;
       scroll-behavior: smooth;
+      overflow-x: hidden;
+      width: 100%;
     }
 
     .container {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 0 32px;
+      padding: 0 24px;
+      width: 100%;
     }
 
-    /* navbar */
+    /* navbar - mobile optimized */
     .navbar {
-      background: rgba(255, 245, 235, 0.85);
+      background: rgba(255, 245, 235, 0.95);
       backdrop-filter: blur(12px);
       border-bottom: 2px solid #ffdab9;
       position: sticky;
       top: 0;
       z-index: 50;
-      padding: 16px 0;
+      padding: 12px 0;
+      width: 100%;
     }
 
     .nav-inner {
@@ -46,34 +50,46 @@
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
+      gap: 12px;
     }
 
     .logo h1 {
-      font-size: 2rem;
+      font-size: 1.4rem;
       font-weight: 800;
       letter-spacing: -0.02em;
       background: linear-gradient(135deg, #c44536, #e07c4b);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      line-height: 1.2;
     }
 
     .logo span {
-      font-size: 1rem;
+      font-size: 0.8rem;
       font-weight: 400;
       color: #e09d6e;
-      margin-left: 6px;
+      margin-left: 4px;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      order: 3;
+      width: 100%;
+      justify-content: center;
+      margin-top: 8px;
     }
 
     .nav-links a {
-      margin-left: 36px;
       text-decoration: none;
       color: #c5542e;
       font-weight: 600;
       transition: all 0.2s;
-      font-size: 1.05rem;
+      font-size: 0.95rem;
       border-bottom: 2px solid transparent;
       padding-bottom: 4px;
+      white-space: nowrap;
     }
 
     .nav-links a:hover {
@@ -83,19 +99,26 @@
 
     .email-badge {
       background: #ffe4ce;
-      padding: 10px 22px;
+      padding: 8px 16px;
       border-radius: 50px;
-      font-size: 1rem;
+      font-size: 0.85rem;
       font-weight: 600;
       color: #9f4a28;
       border: 2px solid #ffba89;
       transition: all 0.2s;
       box-shadow: 0 4px 8px #ffcdb0;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
+      max-width: 100%;
+      overflow-x: auto;
     }
 
     .email-badge i {
-      margin-right: 10px;
+      margin-right: 6px;
       color: #cf5f36;
+      flex-shrink: 0;
     }
 
     .email-badge:hover {
@@ -104,21 +127,22 @@
       transform: scale(1.02);
     }
 
-    /* hero with ANIMATED SMILING FACE HOUSE (simplified) */
+    /* hero with animated house - mobile adjusted */
     .hero {
-      padding: 60px 0 70px;
+      padding: 100px 0 60px;
       background: radial-gradient(circle at 10% 30%, #ffefe2, #fff9f2);
       position: relative;
       overflow: hidden;
+      min-height: auto;
     }
 
-    /* animated smiling house - now just a face */
+    /* animated smiling face house - smaller on mobile */
     .house-container {
       position: absolute;
-      top: 20px;
-      right: 5%;
-      width: 150px;
-      height: 150px;
+      top: 10px;
+      right: 3%;
+      width: 120px;
+      height: 120px;
       animation: floatHouse 6s ease-in-out infinite;
       z-index: 5;
     }
@@ -129,53 +153,52 @@
       background: #f8b56c;
       border-radius: 50% 50% 45% 45%;
       position: relative;
-      box-shadow: 0 10px 0 #c47a44, 0 0 0 4px #a65d2c;
+      box-shadow: 0 8px 0 #c47a44, 0 0 0 3px #a65d2c;
       animation: facePulse 4s ease-in-out infinite;
     }
 
-    /* roof - just a hat-like shape to suggest house */
     .roof-hat {
       position: absolute;
       width: 0;
       height: 0;
-      border-left: 40px solid transparent;
-      border-right: 40px solid transparent;
-      border-bottom: 30px solid #b3450b;
-      top: -20px;
-      left: 35px;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      border-bottom: 22px solid #b3450b;
+      top: -15px;
+      left: 30px;
       z-index: 10;
       animation: hatWiggle 5s ease-in-out infinite;
     }
 
-    /* eyes */
+    /* eyes - adjusted for smaller size */
     .face-eye-left, .face-eye-right {
       position: absolute;
       background: #4a3729;
-      width: 18px;
-      height: 24px;
+      width: 14px;
+      height: 18px;
       border-radius: 50%;
-      top: 45px;
+      top: 35px;
       animation: faceBlink 4s infinite;
       z-index: 5;
     }
 
     .face-eye-left {
-      left: 35px;
+      left: 28px;
     }
 
     .face-eye-right {
-      right: 35px;
+      right: 28px;
     }
 
     /* smile */
     .face-smile {
       position: absolute;
-      width: 60px;
-      height: 30px;
+      width: 45px;
+      height: 22px;
       background: transparent;
-      border-radius: 0 0 60px 60px;
-      border-bottom: 6px solid #4a3729;
-      bottom: 35px;
+      border-radius: 0 0 45px 45px;
+      border-bottom: 5px solid #4a3729;
+      bottom: 28px;
       left: 50%;
       transform: translateX(-50%);
       animation: faceSmile 5s ease-in-out infinite;
@@ -184,31 +207,31 @@
     /* blush */
     .face-blush-left, .face-blush-right {
       position: absolute;
-      width: 15px;
-      height: 10px;
+      width: 12px;
+      height: 8px;
       background: #ffaaaa;
       border-radius: 50%;
       opacity: 0.6;
-      bottom: 50px;
+      bottom: 40px;
       animation: faceBlush 3s ease-in-out infinite;
     }
 
     .face-blush-left {
-      left: 25px;
+      left: 20px;
     }
 
     .face-blush-right {
-      right: 25px;
+      right: 20px;
     }
 
-    /* chimney - small detail to keep house identity */
+    /* chimney */
     .chimney-mini {
       position: absolute;
-      width: 15px;
-      height: 30px;
+      width: 12px;
+      height: 24px;
       background: #a52a2a;
-      top: -15px;
-      right: 30px;
+      top: -12px;
+      right: 25px;
       border-radius: 5px 5px 0 0;
       animation: chimneySmoke 5s ease-in-out infinite;
       z-index: 8;
@@ -217,43 +240,43 @@
     /* smoke */
     .smoke-mini {
       position: absolute;
-      width: 8px;
-      height: 8px;
+      width: 6px;
+      height: 6px;
       background: rgba(255,255,255,0.6);
       border-radius: 50%;
-      top: -25px;
-      right: 37px;
+      top: -20px;
+      right: 30px;
       animation: smokeFloat 4s ease-in-out infinite;
     }
 
     .smoke-mini::before {
       content: '';
       position: absolute;
-      width: 12px;
-      height: 12px;
+      width: 10px;
+      height: 10px;
       background: rgba(255,255,255,0.5);
       border-radius: 50%;
-      top: -8px;
-      left: -5px;
+      top: -6px;
+      left: -4px;
       animation: smokeFloat 4.5s ease-in-out infinite;
     }
 
     /* animations */
     @keyframes floatHouse {
       0% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-10px) rotate(2deg); }
+      50% { transform: translateY(-8px) rotate(2deg); }
       100% { transform: translateY(0px) rotate(0deg); }
     }
 
     @keyframes facePulse {
       0% { transform: scale(1); }
-      50% { transform: scale(1.03); box-shadow: 0 12px 0 #c47a44, 0 0 0 4px #a65d2c; }
+      50% { transform: scale(1.02); box-shadow: 0 10px 0 #c47a44, 0 0 0 3px #a65d2c; }
       100% { transform: scale(1); }
     }
 
     @keyframes hatWiggle {
       0%, 100% { transform: rotate(0deg); }
-      50% { transform: rotate(5deg); }
+      50% { transform: rotate(4deg); }
     }
 
     @keyframes faceBlink {
@@ -262,29 +285,29 @@
     }
 
     @keyframes faceSmile {
-      0%, 100% { border-bottom-width: 6px; width: 60px; }
-      50% { border-bottom-width: 8px; width: 65px; }
+      0%, 100% { border-bottom-width: 5px; width: 45px; }
+      50% { border-bottom-width: 7px; width: 48px; }
     }
 
     @keyframes faceBlush {
       0%, 100% { opacity: 0.5; transform: scale(1); }
-      50% { opacity: 0.9; transform: scale(1.3); }
+      50% { opacity: 0.9; transform: scale(1.2); }
     }
 
     @keyframes chimneySmoke {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-3px); }
+      50% { transform: translateY(-2px); }
     }
 
     @keyframes smokeFloat {
       0% { transform: translate(0, 0) scale(1); opacity: 0.6; }
-      100% { transform: translate(10px, -20px) scale(2); opacity: 0; }
+      100% { transform: translate(8px, -16px) scale(1.8); opacity: 0; }
     }
 
     .hero-grid {
       display: flex;
       align-items: center;
-      gap: 50px;
+      gap: 30px;
       flex-wrap: wrap;
       position: relative;
       z-index: 10;
@@ -295,309 +318,405 @@
       text-align: center;
       max-width: 800px;
       margin: 0 auto;
+      padding: 0 10px;
     }
 
     .hero-badge {
       background: #fed7b0;
       color: #9e4e2c;
       font-weight: 700;
-      font-size: 1rem;
-      padding: 6px 18px;
+      font-size: 0.9rem;
+      padding: 6px 16px;
       border-radius: 40px;
       display: inline-block;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
       border: 1px solid #febe8c;
     }
 
     .hero-content h2 {
-      font-size: 3.8rem;
+      font-size: 2.4rem;
       font-weight: 800;
       line-height: 1.2;
       letter-spacing: -0.02em;
       color: #472e1f;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     .hero-highlight {
       background: #ffe8b5;
-      padding: 5px 18px;
+      padding: 4px 12px;
       border-radius: 60px;
       display: inline-block;
       color: #b44d1f;
       font-weight: 700;
       border: 2px dashed #ffaa6d;
+      font-size: 2.2rem;
     }
 
     .hero-content p {
-      font-size: 1.4rem;
+      font-size: 1.1rem;
       color: #5f4a3a;
-      max-width: 650px;
-      margin: 0 auto 32px;
+      max-width: 600px;
+      margin: 0 auto 24px;
+      padding: 0 10px;
     }
 
     .hero-stats {
       display: flex;
-      gap: 36px;
+      gap: 12px;
       justify-content: center;
       flex-wrap: wrap;
     }
 
     .stat-item {
-      font-size: 1.2rem;
+      font-size: 0.95rem;
       font-weight: 600;
       color: #7b4d31;
       background: #ffedd9;
-      padding: 8px 28px;
+      padding: 6px 16px;
       border-radius: 50px;
+      white-space: nowrap;
     }
 
     .stat-item i {
       color: #ce6233;
-      margin-right: 8px;
+      margin-right: 6px;
     }
 
-    /* focus section */
+    /* focus section - mobile optimized */
     .focus-section {
-      padding: 80px 0;
+      padding: 50px 0;
       background: #ffffffdb;
       backdrop-filter: blur(8px);
-      border-radius: 60px 60px 0 0;
-      margin-top: -20px;
+      border-radius: 40px 40px 0 0;
+      margin-top: -10px;
     }
 
     .section-title {
       text-align: center;
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: 800;
       color: #402b1e;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
+      padding: 0 15px;
     }
 
     .section-sub {
       text-align: center;
       color: #bb6a42;
-      max-width: 650px;
-      margin: 0 auto 50px;
-      font-size: 1.25rem;
+      max-width: 500px;
+      margin: 0 auto 30px;
+      font-size: 1.1rem;
       font-weight: 500;
+      padding: 0 20px;
     }
 
     .card-grid {
       display: flex;
-      gap: 30px;
+      gap: 20px;
       justify-content: center;
       flex-wrap: wrap;
+      padding: 0 15px;
     }
 
     .card {
       background: #fffbf2;
-      border-radius: 40px;
-      padding: 40px 30px;
-      flex: 1 1 260px;
-      max-width: 330px;
+      border-radius: 30px;
+      padding: 30px 20px;
+      flex: 1 1 280px;
+      max-width: 320px;
       border: 3px solid #fec29a;
       transition: all 0.25s;
-      box-shadow: 0 20px 30px -10px #f5be98;
+      box-shadow: 0 15px 25px -10px #f5be98;
     }
 
     .card:hover {
-      transform: translateY(-12px);
+      transform: translateY(-8px);
       border-color: #f79b60;
       background: #ffffff;
     }
 
     .card i {
-      font-size: 3.2rem;
+      font-size: 2.5rem;
       background: #fdd8b9;
-      padding: 18px;
-      border-radius: 40px;
+      padding: 15px;
+      border-radius: 30px;
       color: #bd5727;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
 
     .card h3 {
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: 700;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       color: #31231a;
     }
 
     .card p {
       color: #79553d;
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
 
-    /* seller form - with YOUR Formspree endpoint */
+    /* seller form - mobile optimized */
     .form-strip {
       background: linear-gradient(125deg, #fbd8b6, #ffc9a9);
-      padding: 70px 0;
+      padding: 50px 0;
     }
 
     .form-strip h3 {
-      font-size: 2.4rem;
+      font-size: 2rem;
       font-weight: 700;
       color: #3d281c;
       text-align: center;
       margin-bottom: 20px;
+      padding: 0 20px;
     }
 
     .modern-form {
-      max-width: 720px;
+      max-width: 600px;
       margin: 0 auto;
       background: #fffcf2;
-      padding: 45px 50px;
-      border-radius: 70px;
+      padding: 30px 25px;
+      border-radius: 40px;
       border: 4px solid #ffb882;
-      box-shadow: 0 30px 30px -15px #a5683e;
+      box-shadow: 0 25px 25px -15px #a5683e;
     }
 
     .form-grid {
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 18px;
     }
 
     .form-field label {
       display: block;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       font-weight: 600;
       color: #9f501f;
-      font-size: 1rem;
+      font-size: 0.95rem;
     }
 
     .form-field input,
     .form-field textarea {
       width: 100%;
-      padding: 16px 24px;
+      padding: 14px 20px;
       background: #fff9f2;
       border: 3px solid #ffc5a0;
-      border-radius: 60px;
+      border-radius: 50px;
       font-size: 1rem;
       color: #2d2d2d;
       outline: none;
       transition: 0.2s;
+      -webkit-appearance: none;
     }
 
-    .form-field input:focus,
-    .form-field textarea:focus {
-      border-color: #ff8f5a;
-      background: #ffffff;
-      box-shadow: 0 0 0 5px #ffdec6;
+    .form-field textarea {
+      border-radius: 30px;
+      min-height: 100px;
     }
 
     .btn-submit {
       background: #f5672a;
       border: none;
       color: white;
-      padding: 18px 30px;
-      font-size: 1.3rem;
+      padding: 16px 24px;
+      font-size: 1.2rem;
       font-weight: 700;
-      border-radius: 60px;
+      border-radius: 50px;
       cursor: pointer;
       transition: 0.2s;
       border: 3px solid #ffbc8c;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
+      gap: 10px;
       width: 100%;
-      box-shadow: 0 10px 0 #aa4e22;
+      box-shadow: 0 8px 0 #aa4e22;
+      -webkit-tap-highlight-color: transparent;
     }
 
-    .btn-submit:hover {
-      background: #ff823f;
-      transform: translateY(-3px);
-      box-shadow: 0 15px 0 #aa4e22;
+    .btn-submit:active {
+      transform: translateY(4px);
+      box-shadow: 0 4px 0 #aa4e22;
     }
 
-    .form-note {
-      text-align: center;
-      margin-top: 25px;
-      color: #b75826;
-      font-weight: 600;
-    }
-
-    /* contract section */
+    /* contract section - mobile optimized */
     .contract-section {
       background: #faeadb;
-      padding: 80px 0;
+      padding: 50px 0;
     }
 
     .contract-card {
       background: #fffefc;
-      border-radius: 60px;
-      padding: 48px;
+      border-radius: 40px;
+      padding: 30px 20px;
       border: 4px solid #ffbb85;
-      box-shadow: 0 30px 30px -15px #c48b5e;
+      box-shadow: 0 25px 25px -15px #c48b5e;
     }
 
     .contract-card h2 {
-      font-size: 2.2rem;
+      font-size: 1.8rem;
       font-weight: 700;
       color: #442b1b;
       display: flex;
       align-items: center;
-      gap: 15px;
+      gap: 12px;
       border-bottom: 4px solid #ffc19b;
-      padding-bottom: 25px;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
     }
 
     .contract-body {
-      max-height: 550px;
+      max-height: 500px;
       overflow-y: auto;
-      padding: 20px;
+      padding: 15px;
       background: #fffcf4;
-      border-radius: 40px;
+      border-radius: 30px;
       border: 2px solid #fecaa7;
       color: #3b322a;
+      font-size: 0.9rem;
+      -webkit-overflow-scrolling: touch;
     }
 
+    /* footer - mobile optimized */
     .footer {
       background: #ffdbbf;
       border-top: 4px solid #f8a972;
-      padding: 32px 0;
+      padding: 25px 0;
       color: #6e422b;
+    }
+
+    .footer .container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      text-align: center;
     }
 
     .footer a {
       color: #ba531f;
       font-weight: 600;
+      text-decoration: none;
     }
 
     .success-message {
       background: #8fc93a;
       color: #1f3f00;
-      padding: 14px;
-      border-radius: 60px;
+      padding: 12px;
+      border-radius: 50px;
       text-align: center;
       font-weight: 700;
       margin-top: 20px;
+      font-size: 0.95rem;
     }
 
-    /* responsive */
-    @media (max-width: 768px) {
-      .house-container {
-        width: 100px;
-        height: 100px;
-        top: 10px;
-        right: 2%;
+    /* mobile breakpoints */
+    @media (min-width: 480px) {
+      .logo h1 {
+        font-size: 1.6rem;
       }
+      
       .hero-content h2 {
         font-size: 2.8rem;
       }
+      
+      .hero-highlight {
+        font-size: 2.6rem;
+      }
+      
+      .nav-links {
+        gap: 24px;
+      }
+    }
+
+    @media (min-width: 640px) {
+      .container {
+        padding: 0 32px;
+      }
+      
+      .nav-inner {
+        flex-wrap: nowrap;
+      }
+      
+      .nav-links {
+        width: auto;
+        order: 0;
+        margin-top: 0;
+      }
+      
+      .logo span {
+        display: inline;
+        font-size: 1rem;
+      }
+      
+      .house-container {
+        width: 150px;
+        height: 150px;
+      }
+      
+      .footer .container {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .hero-content h2 {
+        font-size: 3.2rem;
+      }
+      
+      .hero-highlight {
+        font-size: 3rem;
+      }
+      
+      .modern-form {
+        padding: 45px 50px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-content h2 {
+        font-size: 3.8rem;
+      }
+      
+      .hero-highlight {
+        font-size: 3.6rem;
+      }
+      
+      .house-container {
+        width: 160px;
+        height: 160px;
+      }
+    }
+
+    /* touch-friendly improvements */
+    button, 
+    .btn-submit,
+    .nav-links a,
+    .email-badge {
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* prevent text overflow */
+    h1, h2, h3, p, a, span {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
   </style>
 </head>
 <body>
 
-  <!-- navigation -->
+  <!-- navigation - mobile friendly -->
   <nav class="navbar">
     <div class="container nav-inner">
       <div class="logo">
         <h1>RapidKey Acquizitions <span>✦ happy home buyers</span></h1>
       </div>
       <div class="nav-links">
-        <a href="#focus">what we buy</a>
+        <a href="#focus">buy</a>
         <a href="#contract">contract</a>
         <a href="#form-section">sell</a>
       </div>
@@ -605,9 +724,9 @@
     </div>
   </nav>
 
-  <!-- hero section with SIMPLIFIED SMILING FACE HOUSE (no door/window) -->
+  <!-- hero section with smiling face house - mobile adjusted -->
   <section class="hero">
-    <!-- animated smiling face house -->
+    <!-- animated smiling face house (smaller on mobile) -->
     <div class="house-container">
       <div class="face">
         <div class="roof-hat"></div>
@@ -635,7 +754,7 @@
     </div>
   </section>
 
-  <!-- focus both land & houses -->
+  <!-- focus both land & houses - mobile friendly -->
   <section id="focus" class="focus-section">
     <div class="container">
       <h2 class="section-title">We love land + houses</h2>
@@ -660,12 +779,11 @@
     </div>
   </section>
 
-  <!-- seller form with YOUR CORRECT Formspree endpoint -->
+  <!-- seller form - mobile optimized -->
   <section id="form-section" class="form-strip">
     <div class="container">
-      <h3><i class="fas fa-paper-plane" style="margin-right: 12px;"></i> Sell your property</h3>
+      <h3><i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Sell your property</h3>
       <div class="modern-form">
-        <!-- ✅ CORRECTED Formspree endpoint -->
         <form id="sellerForm" action="https://formspree.io/f/mkovdjqk" method="POST">
           <div class="form-grid">
             <div class="form-field">
@@ -685,7 +803,6 @@
               <textarea name="propertyAddress" id="address" placeholder="Street / city / state / parcel" required></textarea>
             </div>
           </div>
-          <!-- Hidden field to ensure email subject -->
           <input type="hidden" name="_subject" value="New property submission from website">
           <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Send</button>
           <div class="form-note"><i class="fas fa-lock"></i> goes straight to RapidKey Acquizitions</div>
@@ -695,13 +812,13 @@
     </div>
   </section>
 
-  <!-- contract (copy) -->
+  <!-- contract section - mobile friendly -->
   <section id="contract" class="contract-section">
     <div class="container">
       <div class="contract-card">
         <h2><i class="fas fa-file-signature"></i> purchase agreement</h2>
         <div class="contract-body">
-          <h1 style="font-size:1.8rem;">REAL ESTATE PURCHASE AND ASSIGNMENT AGREEMENT</h1>
+          <h1 style="font-size:1.5rem;">REAL ESTATE PURCHASE AND ASSIGNMENT AGREEMENT</h1>
           <p><strong>(Investor / Wholesaling Version — 14 Day Inspection)</strong></p>
           <p><strong>Seller:</strong> _________________________________<br><strong>Address:</strong> _________________________________</p>
           <p><strong>Buyer: RapidKey Acquizitions LLC (or assigns)</strong></p>
@@ -742,15 +859,15 @@
     </div>
   </section>
 
-  <!-- footer -->
+  <!-- footer - mobile friendly -->
   <footer class="footer">
     <div class="container">
-      <div>© 2026 RapidKey Acquizitions LLC · happy wholesaling</div>
+      <div>© 2026 RapidKey Acquizitions LLC</div>
       <div><i class="far fa-envelope"></i> <a href="mailto:rapidkeyacquizitions@gmail.com">rapidkeyacquizitions@gmail.com</a></div>
     </div>
   </footer>
 
-  <!-- form submission script for Formspree -->
+  <!-- form submission script -->
   <script>
     const form = document.getElementById('sellerForm');
     const feedback = document.getElementById('formFeedback');
@@ -758,17 +875,14 @@
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
       
-      // Show sending state
       const submitBtn = form.querySelector('.btn-submit');
       const originalText = submitBtn.innerHTML;
       submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
       submitBtn.disabled = true;
       
-      // Collect form data
       const formData = new FormData(form);
       
       try {
-        // Send to Formspree endpoint
         const response = await fetch(form.action, {
           method: 'POST',
           body: formData,
@@ -779,7 +893,7 @@
         
         if (response.ok) {
           feedback.innerHTML = '<div class="success-message">✅ Thank you! Your information has been sent to RapidKey Acquizitions. We\'ll contact you soon!</div>';
-          form.reset(); // Clear the form
+          form.reset();
         } else {
           feedback.innerHTML = '<div class="success-message" style="background:#f7b2a1;">❌ Something went wrong. Please try again or email us directly.</div>';
         }
@@ -787,16 +901,13 @@
         feedback.innerHTML = '<div class="success-message" style="background:#f7b2a1;">❌ Network error. Please check your connection and try again.</div>';
       }
       
-      // Restore button
       submitBtn.innerHTML = originalText;
       submitBtn.disabled = false;
-      
-      // Scroll to feedback
       feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     });
   </script>
   
-  <!-- smooth scroll -->
+  <!-- smooth scroll - mobile optimized -->
   <script>
     document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', function(e) {
       e.preventDefault();
