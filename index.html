@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RapidKey Acquizitions · happy modern wholesaling</title>
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(145deg, #fff9f0 0%, #fff2e5 100%);
+      color: #2d3e50;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* navbar — fresh & airy */
+    .navbar {
+      background: rgba(255, 245, 235, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 2px solid #ffdab9;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 16px 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #c44536, #e07c4b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .logo span {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #e09d6e;
+      margin-left: 6px;
+    }
+
+    .nav-links a {
+      margin-left: 36px;
+      text-decoration: none;
+      color: #c5542e;
+      font-weight: 600;
+      transition: all 0.2s;
+      font-size: 1.05rem;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 4px;
+    }
+
+    .nav-links a:hover {
+      border-bottom-color: #ffb085;
+      color: #b03e1a;
+    }
+
+    .email-badge {
+      background: #ffe4ce;
+      padding: 10px 22px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #9f4a28;
+      border: 2px solid #ffba89;
+      transition: all 0.2s;
+      box-shadow: 0 4px 8px #ffcdb0;
+    }
+
+    .email-badge i {
+      margin-right: 10px;
+      color: #cf5f36;
+    }
+
+    .email-badge:hover {
+      background: #ffd2b3;
+      border-color: #f78b4b;
+      transform: scale(1.02);
+    }
+
+    /* hero — with animated smiling sun */
+    .hero {
+      padding: 60px 0 70px;
+      background: radial-gradient(circle at 10% 30%, #ffefe2, #fff9f2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* animated smiling sun */
+    .sun-container {
+      position: absolute;
+      top: 20px;
+      right: 5%;
+      width: 120px;
+      height: 120px;
+      animation: float 6s ease-in-out infinite;
+      z-index: 5;
+    }
+
+    .sun {
+      width: 100%;
+      height: 100%;
+      background: #ffdd6b;
+      border-radius: 50%;
+      position: relative;
+      box-shadow: 0 0 40px #ffb347;
+      animation: pulse 4s ease-in-out infinite;
+    }
+
+    /* sun rays */
+    .sun::before,
+    .sun::after {
+      content: '';
+      position: absolute;
+      width: 160%;
+      height: 160%;
+      top: -30%;
+      left: -30%;
+      background: radial-gradient(circle, rgba(255,215,100,0.3) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: shine 8s linear infinite;
+      z-index: -1;
+    }
+
+    .sun::after {
+      width: 200%;
+      height: 200%;
+      top: -50%;
+      left: -50%;
+      background: radial-gradient(circle, rgba(255,200,80,0.2) 0%, transparent 80%);
+      animation: shine 12s linear reverse infinite;
+    }
+
+    /* eyes */
+    .eye-left, .eye-right {
+      position: absolute;
+      background: #4a3729;
+      width: 15px;
+      height: 22px;
+      border-radius: 50%;
+      top: 35px;
+      animation: blink 4s infinite;
+    }
+
+    .eye-left {
+      left: 25px;
+    }
+
+    .eye-right {
+      right: 25px;
+    }
+
+    /* smile */
+    .smile {
+      position: absolute;
+      width: 50px;
+      height: 25px;
+      background: transparent;
+      border-radius: 0 0 50px 50px;
+      border-bottom: 6px solid #4a3729;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: smileWiggle 5s ease-in-out infinite;
+    }
+
+    /* blush */
+    .blush-left, .blush-right {
+      position: absolute;
+      width: 12px;
+      height: 8px;
+      background: #ffaa88;
+      border-radius: 50%;
+      opacity: 0.7;
+      bottom: 45px;
+      animation: blushFade 3s ease-in-out infinite;
+    }
+
+    .blush-left {
+      left: 18px;
+    }
+
+    .blush-right {
+      right: 18px;
+    }
+
+    /* animations */
+    @keyframes float {
+      0% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-15px) rotate(5deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); box-shadow: 0 0 60px #ffa726; }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes shine {
+      0% { transform: rotate(0deg) scale(1); opacity: 0.5; }
+      50% { transform: rotate(180deg) scale(1.2); opacity: 0.8; }
+      100% { transform: rotate(360deg) scale(1); opacity: 0.5; }
+    }
+
+    @keyframes blink {
+      0%, 48%, 52%, 100% { transform: scaleY(1); }
+      50% { transform: scaleY(0.1); }
+    }
+
+    @keyframes smileWiggle {
+      0%, 100% { border-bottom-width: 6px; }
+      50% { border-bottom-width: 8px; width: 55px; }
+    }
+
+    @keyframes blushFade {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 0.9; transform: scale(1.2); }
+    }
+
+    .hero-grid {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 10;
+    }
+
+    .hero-content {
+      flex: 1 1 100%;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      background: #fed7b0;
+      color: #9e4e2c;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 6px 18px;
+      border-radius: 40px;
+      display: inline-block;
+      margin-bottom: 24px;
+      border: 1px solid #febe8c;
+    }
+
+    .hero-content h2 {
+      font-size: 3.8rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #472e1f;
+      margin-bottom: 20px;
+    }
+
+    .hero-highlight {
+      background: #ffe8b5;
+      padding: 5px 18px;
+      border-radius: 60px;
+      display: inline-block;
+      color: #b44d1f;
+      font-weight: 700;
+      border: 2px dashed #ffaa6d;
+    }
+
+    .hero-content p {
+      font-size: 1.4rem;
+      color: #5f4a3a;
+      max-width: 650px;
+      margin: 0 auto 32px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 36px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #7b4d31;
+      background: #ffedd9;
+      padding: 8px 28px;
+      border-radius: 50px;
+    }
+
+    .stat-item i {
+      color: #ce6233;
+      margin-right: 8px;
+    }
+
+    /* focus section — both land & houses */
+    .focus-section {
+      padding: 80px 0;
+      background: #ffffffdb;
+      backdrop-filter: blur(8px);
+      border-radius: 60px 60px 0 0;
+      margin-top: -20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #402b1e;
+      margin-bottom: 20px;
+    }
+
+    .section-sub {
+      text-align: center;
+      color: #bb6a42;
+      max-width: 650px;
+      margin: 0 auto 50px;
+      font-size: 1.25rem;
+      font-weight: 500;
+    }
+
+    .card-grid {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: #fffbf2;
+      border-radius: 40px;
+      padding: 40px 30px;
+      flex: 1 1 260px;
+      max-width: 330px;
+      border: 3px solid #fec29a;
+      transition: all 0.25s;
+      box-shadow: 0 20px 30px -10px #f5be98;
+    }
+
+    .card:hover {
+      transform: translateY(-12px);
+      border-color: #f79b60;
+      background: #ffffff;
+    }
+
+    .card i {
+      font-size: 3.2rem;
+      background: #fdd8b9;
+      padding: 18px;
+      border-radius: 40px;
+      color: #bd5727;
+      margin-bottom: 25px;
+    }
+
+    .card h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #31231a;
+    }
+
+    .card p {
+      color: #79553d;
+      font-size: 1.1rem;
+    }
+
+    /* seller form — happy orange energy */
+    .form-strip {
+      background: linear-gradient(125deg, #fbd8b6, #ffc9a9);
+      padding: 70px 0;
+    }
+
+    .form-strip h3 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #3d281c;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .modern-form {
+      max-width: 720px;
+      margin: 0 auto;
+      background: #fffcf2;
+      padding: 45px 50px;
+      border-radius: 70px;
+      border: 4px solid #ffb882;
+      box-shadow: 0 30px 30px -15px #a5683e;
+    }
+
+    .form-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .form-field label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #9f501f;
+      font-size: 1rem;
+    }
+
+    .form-field input,
+    .form-field textarea {
+      width: 100%;
+      padding: 16px 24px;
+      background: #fff9f2;
+      border: 3px solid #ffc5a0;
+      border-radius: 60px;
+      font-size: 1rem;
+      color: #2d2d2d;
+      outline: none;
+      transition: 0.2s;
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus {
+      border-color: #ff8f5a;
+      background: #ffffff;
+      box-shadow: 0 0 0 5px #ffdec6;
+    }
+
+    .btn-submit {
+      background: #f5672a;
+      border: none;
+      color: white;
+      padding: 18px 30px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      border-radius: 60px;
+      cursor: pointer;
+      transition: 0.2s;
+      border: 3px solid #ffbc8c;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      box-shadow: 0 10px 0 #aa4e22;
+    }
+
+    .btn-submit:hover {
+      background: #ff823f;
+      transform: translateY(-3px);
+      box-shadow: 0 15px 0 #aa4e22;
+    }
+
+    .form-note {
+      text-align: center;
+      margin-top: 25px;
+      color: #b75826;
+      font-weight: 600;
+    }
+
+    /* contract section */
+    .contract-section {
+      background: #faeadb;
+      padding: 80px 0;
+    }
+
+    .contract-card {
+      background: #fffefc;
+      border-radius: 60px;
+      padding: 48px;
+      border: 4px solid #ffbb85;
+      box-shadow: 0 30px 30px -15px #c48b5e;
+    }
+
+    .contract-card h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #442b1b;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      border-bottom: 4px solid #ffc19b;
+      padding-bottom: 25px;
+    }
+
+    .contract-body {
+      max-height: 550px;
+      overflow-y: auto;
+      padding: 20px;
+      background: #fffcf4;
+      border-radius: 40px;
+      border: 2px solid #fecaa7;
+      color: #3b322a;
+    }
+
+    .footer {
+      background: #ffdbbf;
+      border-top: 4px solid #f8a972;
+      padding: 32px 0;
+      color: #6e422b;
+    }
+
+    .footer a {
+      color: #ba531f;
+      font-weight: 600;
+    }
+
+    .success-message {
+      background: #8fc93a;
+      color: #1f3f00;
+      padding: 14px;
+      border-radius: 60px;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    /* responsive */
+    @media (max-width: 768px) {
+      .sun-container {
+        width: 80px;
+        height: 80px;
+        top: 10px;
+        right: 2%;
+      }
+      .eye-left, .eye-right {
+        width: 10px;
+        height: 16px;
+        top: 22px;
+      }
+      .smile {
+        width: 35px;
+        bottom: 18px;
+        border-bottom-width: 4px;
+      }
+      .hero-content h2 {
+        font-size: 2.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- navigation -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <div class="logo">
+        <h1>RapidKey Acquizitions <span>✦ happy home buyers</span></h1>
+      </div>
+      <div class="nav-links">
+        <a href="#focus">what we buy</a>
+        <a href="#contract">contract</a>
+        <a href="#form-section">sell</a>
+      </div>
+      <a href="mailto:rapidkeyacquizitions@gmail.com" class="email-badge"><i class="far fa-envelope"></i> rapidkeyacquizitions@gmail.com</a>
+    </div>
+  </nav>
+
+  <!-- hero section with ANIMATED SMILING SUN -->
+  <section class="hero">
+    <!-- animated smiling sun -->
+    <div class="sun-container">
+      <div class="sun">
+        <div class="eye-left"></div>
+        <div class="eye-right"></div>
+        <div class="smile"></div>
+        <div class="blush-left"></div>
+        <div class="blush-right"></div>
+      </div>
+    </div>
+
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="hero-badge"><i class="fas fa-sun"></i> bright offers · happy sellers</span>
+        <h2>We buy <span class="hero-highlight">land & houses</span> <br>with a smile</h2>
+        <p>RapidKey Acquizitions LLC — from vacant lots to dream homes. Fast, fair, and friendly wholesale.</p>
+        <div class="hero-stats">
+          <div class="stat-item"><i class="fas fa-tree"></i> land</div>
+          <div class="stat-item"><i class="fas fa-house"></i> houses</div>
+          <div class="stat-item"><i class="fas fa-hand-holding-heart"></i> wholesale</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- focus both land & houses -->
+  <section id="focus" class="focus-section">
+    <div class="container">
+      <h2 class="section-title">We love land + houses</h2>
+      <div class="section-sub">Whatever you've got — we'll make a cheerful offer</div>
+      <div class="card-grid">
+        <div class="card">
+          <i class="fas fa-mountain"></i>
+          <h3>Land</h3>
+          <p>Vacant, recreational, timber, lots — anywhere</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-home"></i>
+          <h3>Houses</h3>
+          <p>Fixers, probate, multifamily — as‑is, no stress</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-rocket"></i>
+          <h3>Fast wholesale</h3>
+          <p>Lock & assign — quick closings, cash offers</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- seller form with "Send" button -->
+  <section id="form-section" class="form-strip">
+    <div class="container">
+      <h3><i class="fas fa-paper-plane" style="margin-right: 12px;"></i> Sell your property</h3>
+      <div class="modern-form">
+        <form id="sellerForm">
+          <div class="form-grid">
+            <div class="form-field">
+              <label><i class="far fa-user"></i> full name</label>
+              <input type="text" id="name" placeholder="Taylor Smith" required>
+            </div>
+            <div class="form-field">
+              <label><i class="far fa-phone"></i> phone</label>
+              <input type="tel" id="phone" placeholder="(555) 777-9999" required>
+            </div>
+            <div class="form-field">
+              <label><i class="far fa-envelope"></i> email</label>
+              <input type="email" id="email" placeholder="taylor@example.com" required>
+            </div>
+            <div class="form-field">
+              <label><i class="fas fa-map-pin"></i> property address</label>
+              <textarea id="address" placeholder="Street / city / state / parcel" required></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Send</button>
+          <div class="form-note"><i class="fas fa-lock"></i> goes straight to RapidKey</div>
+        </form>
+        <div id="formFeedback"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- contract (copy) -->
+  <section id="contract" class="contract-section">
+    <div class="container">
+      <div class="contract-card">
+        <h2><i class="fas fa-file-signature"></i> purchase agreement</h2>
+        <div class="contract-body">
+          <h1 style="font-size:1.8rem;">REAL ESTATE PURCHASE AND ASSIGNMENT AGREEMENT</h1>
+          <p><strong>(Investor / Wholesaling Version — 14 Day Inspection)</strong></p>
+          <p><strong>Seller:</strong> _________________________________<br><strong>Address:</strong> _________________________________</p>
+          <p><strong>Buyer: RapidKey Acquizitions LLC (or assigns)</strong></p>
+          <h3>1. PROPERTY</h3>
+          <p>Address: ............................................................<br>Parcel ID: ..........................................................</p>
+          <h3>2. PURCHASE PRICE</h3>
+          <p>$______________. Earnest money $________, deposited with _________________. Fully refundable during inspection.</p>
+          <h3>3. INSPECTION PERIOD</h3>
+          <p>Buyer has 14 calendar days to inspect & may terminate for any reason.</p>
+          <h3>4. CLOSING</h3>
+          <p>On or before ____________, with marketable title.</p>
+          <h3>5. AS-IS CONDITION</h3>
+          <p>Property sold STRICTLY AS-IS, WHERE-IS, WITH ALL FAULTS.</p>
+          <h3>6. ASSIGNMENT</h3>
+          <p>Buyer may assign this agreement without Seller's consent.</p>
+          <h3>7. EQUITABLE INTEREST</h3>
+          <p>Seller understands Buyer may market equitable interest.</p>
+          <h3>8. MARKETING PERMISSION</h3>
+          <p>Seller grants access for inspections/marketing.</p>
+          <h3>9. NON-CIRCUMVENTION</h3>
+          <p>Seller won't bypass Buyer with introduced parties.</p>
+          <h3>10. ACCESS</h3>
+          <p>Reasonable access for Buyer & team.</p>
+          <h3>11. DEFAULT</h3>
+          <p>Liquidated damages = earnest money.</p>
+          <h3>12. CLOSING COSTS</h3>
+          <p>Customary buyer/seller costs.</p>
+          <h3>13. DISCLOSURES</h3>
+          <p>Seller provides required disclosures.</p>
+          <h3>14. TIME IS OF THE ESSENCE</h3>
+          <h3>15. GOVERNING LAW</h3>
+          <p>State where property located.</p>
+          <h3>16. ENTIRE AGREEMENT</h3>
+          <h3>17. ELECTRONIC SIGNATURES</h3>
+          <p><strong>SIGNATURES</strong><br>Seller: ___________________ Date: ______<br>RapidKey Acquizitions LLC: ___________________</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer class="footer">
+    <div class="container">
+      <div>© 2026 RapidKey Acquizitions LLC · happy wholesaling</div>
+      <div><i class="far fa-envelope"></i> <a href="mailto:rapidkeyacquizitions@gmail.com">rapidkeyacquizitions@gmail.com</a></div>
+    </div>
+  </footer>
+
+  <!-- form mailto script -->
+  <script>
+    const form = document.getElementById('sellerForm');
+    const feedback = document.getElementById('formFeedback');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const addr = document.getElementById('address').value.trim();
+      if (!name || !phone || !email || !addr) {
+        feedback.innerHTML = '<div class="success-message" style="background:#f7b2a1;">🙈 please fill everything!</div>';
+        return;
+      }
+      const subject = encodeURIComponent('New property from ' + name);
+      const body = encodeURIComponent(`Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nProperty: ${addr}`);
+      window.location.href = `mailto:rapidkeyacquizitions@gmail.com?subject=${subject}&body=${body}`;
+      feedback.innerHTML = '<div class="success-message">🌈 opened your email — just hit send ✨</div>';
+    });
+  </script>
+  <!-- smooth scroll -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if(target) target.scrollIntoView({behavior: 'smooth'});
+    }));
+  </script>
+</body>
+</html>
