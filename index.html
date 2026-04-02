@@ -1,919 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>RapidKey Acquizitions · happy modern wholesaling</title>
-  <!-- Google Fonts & Font Awesome -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RapidKey Acquizitions LLC · Government Contract Procurement</title>
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(145deg, #fff9f0 0%, #fff2e5 100%);
-      color: #2d3e50;
-      line-height: 1.5;
-      scroll-behavior: smooth;
-      overflow-x: hidden;
-      width: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
     }
 
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 24px;
-      width: 100%;
-    }
-
-    /* navbar - mobile optimized */
-    .navbar {
-      background: rgba(255, 245, 235, 0.95);
-      backdrop-filter: blur(12px);
-      border-bottom: 2px solid #ffdab9;
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      padding: 12px 0;
-      width: 100%;
-    }
-
-    .nav-inner {
+    header {
+      background: #111827;
+      padding: 20px 40px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .logo h1 {
-      font-size: 1.4rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      background: linear-gradient(135deg, #c44536, #e07c4b);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      line-height: 1.2;
-    }
-
-    .logo span {
-      font-size: 0.8rem;
-      font-weight: 400;
-      color: #e09d6e;
-      margin-left: 4px;
-      display: block;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 16px;
-      order: 3;
-      width: 100%;
-      justify-content: center;
-      margin-top: 8px;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: #c5542e;
-      font-weight: 600;
-      transition: all 0.2s;
-      font-size: 0.95rem;
-      border-bottom: 2px solid transparent;
-      padding-bottom: 4px;
-      white-space: nowrap;
-    }
-
-    .nav-links a:hover {
-      border-bottom-color: #ffb085;
-      color: #b03e1a;
-    }
-
-    .email-badge {
-      background: #ffe4ce;
-      padding: 8px 16px;
-      border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #9f4a28;
-      border: 2px solid #ffba89;
-      transition: all 0.2s;
-      box-shadow: 0 4px 8px #ffcdb0;
-      text-decoration: none;
-      display: inline-flex;
       align-items: center;
-      white-space: nowrap;
-      max-width: 100%;
-      overflow-x: auto;
+      border-bottom: 1px solid #334155;
     }
 
-    .email-badge i {
-      margin-right: 6px;
-      color: #cf5f36;
-      flex-shrink: 0;
+    header h1 {
+      font-size: 18px;
+      margin: 0;
+      letter-spacing: 1px;
     }
 
-    .email-badge:hover {
-      background: #ffd2b3;
-      border-color: #f78b4b;
-      transform: scale(1.02);
+    nav a {
+      color: #e2e8f0;
+      margin-left: 20px;
+      text-decoration: none;
+      font-size: 14px;
     }
 
-    /* hero with animated house - mobile adjusted */
     .hero {
-      padding: 100px 0 60px;
-      background: radial-gradient(circle at 10% 30%, #ffefe2, #fff9f2);
-      position: relative;
-      overflow: hidden;
-      min-height: auto;
-    }
-
-    /* animated smiling face house - smaller on mobile */
-    .house-container {
-      position: absolute;
-      top: 10px;
-      right: 3%;
-      width: 120px;
-      height: 120px;
-      animation: floatHouse 6s ease-in-out infinite;
-      z-index: 5;
-    }
-
-    .face {
-      width: 100%;
-      height: 100%;
-      background: #f8b56c;
-      border-radius: 50% 50% 45% 45%;
-      position: relative;
-      box-shadow: 0 8px 0 #c47a44, 0 0 0 3px #a65d2c;
-      animation: facePulse 4s ease-in-out infinite;
-    }
-
-    .roof-hat {
-      position: absolute;
-      width: 0;
-      height: 0;
-      border-left: 30px solid transparent;
-      border-right: 30px solid transparent;
-      border-bottom: 22px solid #b3450b;
-      top: -15px;
-      left: 30px;
-      z-index: 10;
-      animation: hatWiggle 5s ease-in-out infinite;
-    }
-
-    /* eyes - adjusted for smaller size */
-    .face-eye-left, .face-eye-right {
-      position: absolute;
-      background: #4a3729;
-      width: 14px;
-      height: 18px;
-      border-radius: 50%;
-      top: 35px;
-      animation: faceBlink 4s infinite;
-      z-index: 5;
-    }
-
-    .face-eye-left {
-      left: 28px;
-    }
-
-    .face-eye-right {
-      right: 28px;
-    }
-
-    /* smile */
-    .face-smile {
-      position: absolute;
-      width: 45px;
-      height: 22px;
-      background: transparent;
-      border-radius: 0 0 45px 45px;
-      border-bottom: 5px solid #4a3729;
-      bottom: 28px;
-      left: 50%;
-      transform: translateX(-50%);
-      animation: faceSmile 5s ease-in-out infinite;
-    }
-
-    /* blush */
-    .face-blush-left, .face-blush-right {
-      position: absolute;
-      width: 12px;
-      height: 8px;
-      background: #ffaaaa;
-      border-radius: 50%;
-      opacity: 0.6;
-      bottom: 40px;
-      animation: faceBlush 3s ease-in-out infinite;
-    }
-
-    .face-blush-left {
-      left: 20px;
-    }
-
-    .face-blush-right {
-      right: 20px;
-    }
-
-    /* chimney */
-    .chimney-mini {
-      position: absolute;
-      width: 12px;
-      height: 24px;
-      background: #a52a2a;
-      top: -12px;
-      right: 25px;
-      border-radius: 5px 5px 0 0;
-      animation: chimneySmoke 5s ease-in-out infinite;
-      z-index: 8;
-    }
-
-    /* smoke */
-    .smoke-mini {
-      position: absolute;
-      width: 6px;
-      height: 6px;
-      background: rgba(255,255,255,0.6);
-      border-radius: 50%;
-      top: -20px;
-      right: 30px;
-      animation: smokeFloat 4s ease-in-out infinite;
-    }
-
-    .smoke-mini::before {
-      content: '';
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      background: rgba(255,255,255,0.5);
-      border-radius: 50%;
-      top: -6px;
-      left: -4px;
-      animation: smokeFloat 4.5s ease-in-out infinite;
-    }
-
-    /* animations */
-    @keyframes floatHouse {
-      0% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-8px) rotate(2deg); }
-      100% { transform: translateY(0px) rotate(0deg); }
-    }
-
-    @keyframes facePulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.02); box-shadow: 0 10px 0 #c47a44, 0 0 0 3px #a65d2c; }
-      100% { transform: scale(1); }
-    }
-
-    @keyframes hatWiggle {
-      0%, 100% { transform: rotate(0deg); }
-      50% { transform: rotate(4deg); }
-    }
-
-    @keyframes faceBlink {
-      0%, 48%, 52%, 100% { transform: scaleY(1); }
-      50% { transform: scaleY(0.1); }
-    }
-
-    @keyframes faceSmile {
-      0%, 100% { border-bottom-width: 5px; width: 45px; }
-      50% { border-bottom-width: 7px; width: 48px; }
-    }
-
-    @keyframes faceBlush {
-      0%, 100% { opacity: 0.5; transform: scale(1); }
-      50% { opacity: 0.9; transform: scale(1.2); }
-    }
-
-    @keyframes chimneySmoke {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-2px); }
-    }
-
-    @keyframes smokeFloat {
-      0% { transform: translate(0, 0) scale(1); opacity: 0.6; }
-      100% { transform: translate(8px, -16px) scale(1.8); opacity: 0; }
-    }
-
-    .hero-grid {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      flex-wrap: wrap;
-      position: relative;
-      z-index: 10;
-    }
-
-    .hero-content {
-      flex: 1 1 100%;
+      padding: 80px 40px;
       text-align: center;
-      max-width: 800px;
+      background: #0f172a;
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 16px;
+      color: #94a3b8;
+      max-width: 700px;
       margin: 0 auto;
-      padding: 0 10px;
     }
 
-    .hero-badge {
-      background: #fed7b0;
-      color: #9e4e2c;
-      font-weight: 700;
-      font-size: 0.9rem;
-      padding: 6px 16px;
-      border-radius: 40px;
+    .badge {
       display: inline-block;
-      margin-bottom: 20px;
-      border: 1px solid #febe8c;
+      background: #22c55e;
+      color: #000;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 12px;
+      margin-top: 10px;
     }
 
-    .hero-content h2 {
-      font-size: 2.4rem;
-      font-weight: 800;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      color: #472e1f;
-      margin-bottom: 16px;
+    .section {
+      padding: 60px 40px;
+      max-width: 1000px;
+      margin: auto;
     }
 
-    .hero-highlight {
-      background: #ffe8b5;
-      padding: 4px 12px;
-      border-radius: 60px;
-      display: inline-block;
-      color: #b44d1f;
-      font-weight: 700;
-      border: 2px dashed #ffaa6d;
-      font-size: 2.2rem;
-    }
-
-    .hero-content p {
-      font-size: 1.1rem;
-      color: #5f4a3a;
-      max-width: 600px;
-      margin: 0 auto 24px;
-      padding: 0 10px;
-    }
-
-    .hero-stats {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .stat-item {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: #7b4d31;
-      background: #ffedd9;
-      padding: 6px 16px;
-      border-radius: 50px;
-      white-space: nowrap;
-    }
-
-    .stat-item i {
-      color: #ce6233;
-      margin-right: 6px;
-    }
-
-    /* focus section - mobile optimized */
-    .focus-section {
-      padding: 50px 0;
-      background: #ffffffdb;
-      backdrop-filter: blur(8px);
-      border-radius: 40px 40px 0 0;
-      margin-top: -10px;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 2rem;
-      font-weight: 800;
-      color: #402b1e;
-      margin-bottom: 16px;
-      padding: 0 15px;
+    .section h2 {
+      margin-bottom: 10px;
     }
 
     .section-sub {
-      text-align: center;
-      color: #bb6a42;
-      max-width: 500px;
-      margin: 0 auto 30px;
-      font-size: 1.1rem;
-      font-weight: 500;
-      padding: 0 20px;
-    }
-
-    .card-grid {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-      padding: 0 15px;
+      color: #94a3b8;
+      margin-bottom: 25px;
     }
 
     .card {
-      background: #fffbf2;
-      border-radius: 30px;
-      padding: 30px 20px;
-      flex: 1 1 280px;
-      max-width: 320px;
-      border: 3px solid #fec29a;
-      transition: all 0.25s;
-      box-shadow: 0 15px 25px -10px #f5be98;
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #334155;
     }
 
-    .card:hover {
-      transform: translateY(-8px);
-      border-color: #f79b60;
-      background: #ffffff;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
 
-    .card i {
-      font-size: 2.5rem;
-      background: #fdd8b9;
-      padding: 15px;
-      border-radius: 30px;
-      color: #bd5727;
-      margin-bottom: 20px;
-    }
-
-    .card h3 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: #31231a;
-    }
-
-    .card p {
-      color: #79553d;
-      font-size: 1rem;
-    }
-
-    /* seller form - mobile optimized */
-    .form-strip {
-      background: linear-gradient(125deg, #fbd8b6, #ffc9a9);
-      padding: 50px 0;
-    }
-
-    .form-strip h3 {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #3d281c;
-      text-align: center;
-      margin-bottom: 20px;
-      padding: 0 20px;
-    }
-
-    .modern-form {
-      max-width: 600px;
-      margin: 0 auto;
-      background: #fffcf2;
-      padding: 30px 25px;
-      border-radius: 40px;
-      border: 4px solid #ffb882;
-      box-shadow: 0 25px 25px -15px #a5683e;
-    }
-
-    .form-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .form-field label {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: 600;
-      color: #9f501f;
-      font-size: 0.95rem;
-    }
-
-    .form-field input,
-    .form-field textarea {
+    input, textarea {
       width: 100%;
-      padding: 14px 20px;
-      background: #fff9f2;
-      border: 3px solid #ffc5a0;
-      border-radius: 50px;
-      font-size: 1rem;
-      color: #2d2d2d;
-      outline: none;
-      transition: 0.2s;
-      -webkit-appearance: none;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      background: #0f172a;
+      border: 1px solid #334155;
+      color: #e2e8f0;
+      border-radius: 5px;
     }
 
-    .form-field textarea {
-      border-radius: 30px;
-      min-height: 100px;
-    }
-
-    .btn-submit {
-      background: #f5672a;
-      border: none;
+    button {
+      background: #3b82f6;
       color: white;
-      padding: 16px 24px;
-      font-size: 1.2rem;
-      font-weight: 700;
-      border-radius: 50px;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 6px;
       cursor: pointer;
-      transition: 0.2s;
-      border: 3px solid #ffbc8c;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      width: 100%;
-      box-shadow: 0 8px 0 #aa4e22;
-      -webkit-tap-highlight-color: transparent;
     }
 
-    .btn-submit:active {
-      transform: translateY(4px);
-      box-shadow: 0 4px 0 #aa4e22;
-    }
-
-    /* contract section - mobile optimized */
-    .contract-section {
-      background: #faeadb;
-      padding: 50px 0;
-    }
-
-    .contract-card {
-      background: #fffefc;
-      border-radius: 40px;
-      padding: 30px 20px;
-      border: 4px solid #ffbb85;
-      box-shadow: 0 25px 25px -15px #c48b5e;
-    }
-
-    .contract-card h2 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #442b1b;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      border-bottom: 4px solid #ffc19b;
-      padding-bottom: 20px;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-    }
-
-    .contract-body {
-      max-height: 500px;
-      overflow-y: auto;
-      padding: 15px;
-      background: #fffcf4;
-      border-radius: 30px;
-      border: 2px solid #fecaa7;
-      color: #3b322a;
-      font-size: 0.9rem;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    /* footer - mobile optimized */
-    .footer {
-      background: #ffdbbf;
-      border-top: 4px solid #f8a972;
-      padding: 25px 0;
-      color: #6e422b;
-    }
-
-    .footer .container {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
+    footer {
       text-align: center;
-    }
-
-    .footer a {
-      color: #ba531f;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .success-message {
-      background: #8fc93a;
-      color: #1f3f00;
-      padding: 12px;
-      border-radius: 50px;
-      text-align: center;
-      font-weight: 700;
-      margin-top: 20px;
-      font-size: 0.95rem;
-    }
-
-    /* mobile breakpoints */
-    @media (min-width: 480px) {
-      .logo h1 {
-        font-size: 1.6rem;
-      }
-      
-      .hero-content h2 {
-        font-size: 2.8rem;
-      }
-      
-      .hero-highlight {
-        font-size: 2.6rem;
-      }
-      
-      .nav-links {
-        gap: 24px;
-      }
-    }
-
-    @media (min-width: 640px) {
-      .container {
-        padding: 0 32px;
-      }
-      
-      .nav-inner {
-        flex-wrap: nowrap;
-      }
-      
-      .nav-links {
-        width: auto;
-        order: 0;
-        margin-top: 0;
-      }
-      
-      .logo span {
-        display: inline;
-        font-size: 1rem;
-      }
-      
-      .house-container {
-        width: 150px;
-        height: 150px;
-      }
-      
-      .footer .container {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
-      }
-    }
-
-    @media (min-width: 768px) {
-      .hero-content h2 {
-        font-size: 3.2rem;
-      }
-      
-      .hero-highlight {
-        font-size: 3rem;
-      }
-      
-      .modern-form {
-        padding: 45px 50px;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .hero-content h2 {
-        font-size: 3.8rem;
-      }
-      
-      .hero-highlight {
-        font-size: 3.6rem;
-      }
-      
-      .house-container {
-        width: 160px;
-        height: 160px;
-      }
-    }
-
-    /* touch-friendly improvements */
-    button, 
-    .btn-submit,
-    .nav-links a,
-    .email-badge {
-      cursor: pointer;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    /* prevent text overflow */
-    h1, h2, h3, p, a, span {
-      word-wrap: break-word;
-      overflow-wrap: break-word;
+      padding: 30px;
+      font-size: 12px;
+      color: #64748b;
+      border-top: 1px solid #334155;
     }
   </style>
 </head>
+
 <body>
 
-  <!-- navigation - mobile friendly -->
-  <nav class="navbar">
-    <div class="container nav-inner">
-      <div class="logo">
-        <h1>RapidKey Acquizitions <span>✦ happy home buyers</span></h1>
-      </div>
-      <div class="nav-links">
-        <a href="#focus">buy</a>
-        <a href="#contract">contract</a>
-        <a href="#form-section">sell</a>
-      </div>
-      <a href="mailto:rapidkeyacquizitions@gmail.com" class="email-badge"><i class="far fa-envelope"></i> rapidkeyacquizitions@gmail.com</a>
-    </div>
+<header>
+  <h1>RapidKey Acquizitions LLC</h1>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#capabilities">Capability</a>
+    <a href="#contact">Contact</a>
   </nav>
+</header>
 
-  <!-- hero section with smiling face house - mobile adjusted -->
-  <section class="hero">
-    <!-- animated smiling face house (smaller on mobile) -->
-    <div class="house-container">
-      <div class="face">
-        <div class="roof-hat"></div>
-        <div class="chimney-mini"></div>
-        <div class="smoke-mini"></div>
-        <div class="face-eye-left"></div>
-        <div class="face-eye-right"></div>
-        <div class="face-smile"></div>
-        <div class="face-blush-left"></div>
-        <div class="face-blush-right"></div>
-      </div>
+<section class="hero">
+  <h2>Government Contract Procurement Support</h2>
+  <p>
+    RapidKey Acquizitions LLC provides procurement coordination, supplier sourcing,
+    and bid support for state and local government contracts.
+  </p>
+  <div class="badge">Procurement Services Available</div>
+</section>
+
+<section id="services" class="section">
+  <h2>Core Services</h2>
+  <div class="section-sub">Public sector sourcing and contract support</div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Supplier Sourcing</h3>
+      <p>Identification of qualified vendors and manufacturers for contract fulfillment.</p>
     </div>
 
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <span class="hero-badge"><i class="fas fa-smile"></i> happy offers · smiling sellers</span>
-        <h2>We buy <span class="hero-highlight">land & houses</span> <br>with a smile</h2>
-        <p>RapidKey Acquizitions LLC — from vacant lots to dream homes. Fast, fair, and friendly wholesale.</p>
-        <div class="hero-stats">
-          <div class="stat-item"><i class="fas fa-tree"></i> land</div>
-          <div class="stat-item"><i class="fas fa-house"></i> houses</div>
-          <div class="stat-item"><i class="fas fa-hand-holding-heart"></i> wholesale</div>
-        </div>
-      </div>
+    <div class="card">
+      <h3>Bid Support</h3>
+      <p>Assistance with RFP and RFQ response preparation and documentation.</p>
     </div>
-  </section>
 
-  <!-- focus both land & houses - mobile friendly -->
-  <section id="focus" class="focus-section">
-    <div class="container">
-      <h2 class="section-title">We love land + houses</h2>
-      <div class="section-sub">Whatever you've got — we'll make a cheerful offer</div>
-      <div class="card-grid">
-        <div class="card">
-          <i class="fas fa-mountain"></i>
-          <h3>Land</h3>
-          <p>Vacant, recreational, timber, lots — anywhere</p>
-        </div>
-        <div class="card">
-          <i class="fas fa-home"></i>
-          <h3>Houses</h3>
-          <p>Fixers, probate, multifamily — as‑is, no stress</p>
-        </div>
-        <div class="card">
-          <i class="fas fa-rocket"></i>
-          <h3>Fast wholesale</h3>
-          <p>Lock & assign — quick closings, cash offers</p>
-        </div>
-      </div>
+    <div class="card">
+      <h3>Logistics Coordination</h3>
+      <p>Delivery coordination and fulfillment oversight for awarded contracts.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- seller form - mobile optimized -->
-  <section id="form-section" class="form-strip">
-    <div class="container">
-      <h3><i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Sell your property</h3>
-      <div class="modern-form">
-        <form id="sellerForm" action="https://formspree.io/f/mkovdjqk" method="POST">
-          <div class="form-grid">
-            <div class="form-field">
-              <label><i class="far fa-user"></i> full name</label>
-              <input type="text" name="name" id="name" placeholder="Taylor Smith" required>
-            </div>
-            <div class="form-field">
-              <label><i class="far fa-phone"></i> phone</label>
-              <input type="tel" name="phone" id="phone" placeholder="(555) 777-9999" required>
-            </div>
-            <div class="form-field">
-              <label><i class="far fa-envelope"></i> email</label>
-              <input type="email" name="email" id="email" placeholder="taylor@example.com" required>
-            </div>
-            <div class="form-field">
-              <label><i class="fas fa-map-pin"></i> property address</label>
-              <textarea name="propertyAddress" id="address" placeholder="Street / city / state / parcel" required></textarea>
-            </div>
-          </div>
-          <input type="hidden" name="_subject" value="New property submission from website">
-          <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Send</button>
-          <div class="form-note"><i class="fas fa-lock"></i> goes straight to RapidKey Acquizitions</div>
-        </form>
-        <div id="formFeedback"></div>
-      </div>
-    </div>
-  </section>
+<section id="capabilities" class="section">
+  <h2>Capability Statement</h2>
+  <div class="section-sub">Company overview and procurement classification</div>
 
-  <!-- contract section - mobile friendly -->
-  <section id="contract" class="contract-section">
-    <div class="container">
-      <div class="contract-card">
-        <h2><i class="fas fa-file-signature"></i> purchase agreement</h2>
-        <div class="contract-body">
-          <h1 style="font-size:1.5rem;">REAL ESTATE PURCHASE AND ASSIGNMENT AGREEMENT</h1>
-          <p><strong>(Investor / Wholesaling Version — 14 Day Inspection)</strong></p>
-          <p><strong>Seller:</strong> _________________________________<br><strong>Address:</strong> _________________________________</p>
-          <p><strong>Buyer: RapidKey Acquizitions LLC (or assigns)</strong></p>
-          <h3>1. PROPERTY</h3>
-          <p>Address: ............................................................<br>Parcel ID: ..........................................................</p>
-          <h3>2. PURCHASE PRICE</h3>
-          <p>$______________. Earnest money $________, deposited with _________________. Fully refundable during inspection.</p>
-          <h3>3. INSPECTION PERIOD</h3>
-          <p>Buyer has 14 calendar days to inspect & may terminate for any reason.</p>
-          <h3>4. CLOSING</h3>
-          <p>On or before ____________, with marketable title.</p>
-          <h3>5. AS-IS CONDITION</h3>
-          <p>Property sold STRICTLY AS-IS, WHERE-IS, WITH ALL FAULTS.</p>
-          <h3>6. ASSIGNMENT</h3>
-          <p>Buyer may assign this agreement without Seller's consent.</p>
-          <h3>7. EQUITABLE INTEREST</h3>
-          <p>Seller understands Buyer may market equitable interest.</p>
-          <h3>8. MARKETING PERMISSION</h3>
-          <p>Seller grants access for inspections/marketing.</p>
-          <h3>9. NON-CIRCUMVENTION</h3>
-          <p>Seller won't bypass Buyer with introduced parties.</p>
-          <h3>10. ACCESS</h3>
-          <p>Reasonable access for Buyer & team.</p>
-          <h3>11. DEFAULT</h3>
-          <p>Liquidated damages = earnest money.</p>
-          <h3>12. CLOSING COSTS</h3>
-          <p>Customary buyer/seller costs.</p>
-          <h3>13. DISCLOSURES</h3>
-          <p>Seller provides required disclosures.</p>
-          <h3>14. TIME IS OF THE ESSENCE</h3>
-          <h3>15. GOVERNING LAW</h3>
-          <p>State where property located.</p>
-          <h3>16. ENTIRE AGREEMENT</h3>
-          <h3>17. ELECTRONIC SIGNATURES</h3>
-          <p><strong>SIGNATURES</strong><br>Seller: ___________________ Date: ______<br>RapidKey Acquizitions LLC: ___________________</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div class="card">
+    <p><strong>Company:</strong> RapidKey Acquizitions LLC</p>
+    <p><strong>Email:</strong> rapidkeyacquizitions@gmail.com</p>
+    <p><strong>Core Focus:</strong> Government procurement support & supplier coordination</p>
+    <p><strong>Target Market:</strong> State, County, and Local Government Agencies</p>
+    <p><strong>NAICS Codes:</strong> 423210 · 541614 · 493190</p>
+    <p><strong>Status:</strong> Vendor-ready (registration in progress if applicable)</p>
+  </div>
+</section>
 
-  <!-- footer - mobile friendly -->
-  <footer class="footer">
-    <div class="container">
-      <div>© 2026 RapidKey Acquizitions LLC</div>
-      <div><i class="far fa-envelope"></i> <a href="mailto:rapidkeyacquizitions@gmail.com">rapidkeyacquizitions@gmail.com</a></div>
-    </div>
-  </footer>
+<section id="contact" class="section">
+  <h2>Procurement Inquiry</h2>
+  <div class="section-sub">Submit contract or sourcing requests</div>
 
-  <!-- form submission script -->
-  <script>
-    const form = document.getElementById('sellerForm');
-    const feedback = document.getElementById('formFeedback');
-    
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      
-      const submitBtn = form.querySelector('.btn-submit');
-      const originalText = submitBtn.innerHTML;
-      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-      submitBtn.disabled = true;
-      
-      const formData = new FormData(form);
-      
-      try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
-        });
-        
-        if (response.ok) {
-          feedback.innerHTML = '<div class="success-message">✅ Thank you! Your information has been sent to RapidKey Acquizitions. We\'ll contact you soon!</div>';
-          form.reset();
-        } else {
-          feedback.innerHTML = '<div class="success-message" style="background:#f7b2a1;">❌ Something went wrong. Please try again or email us directly.</div>';
-        }
-      } catch (error) {
-        feedback.innerHTML = '<div class="success-message" style="background:#f7b2a1;">❌ Network error. Please check your connection and try again.</div>';
-      }
-      
-      submitBtn.innerHTML = originalText;
-      submitBtn.disabled = false;
-      feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    });
-  </script>
-  
-  <!-- smooth scroll - mobile optimized -->
-  <script>
-    document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if(target) target.scrollIntoView({behavior: 'smooth'});
-    }));
-  </script>
+  <div class="card">
+    <form action="https://formspree.io/f/mnqkxxxx" method="POST">
+
+      <label>Name</label>
+      <input type="text" name="name" required>
+
+      <label>Email</label>
+      <input type="email" name="email" required>
+
+      <label>Agency / Organization</label>
+      <input type="text" name="organization">
+
+      <label>Request Details</label>
+      <textarea name="message" rows="5" required></textarea>
+
+      <button type="submit">Submit Request</button>
+    </form>
+  </div>
+
+  <div class="card" style="margin-top:20px;">
+    <p><strong>Direct Contact:</strong> rapidkeyacquizitions@gmail.com</p>
+  </div>
+</section>
+
+<footer>
+  © 2026 RapidKey Acquizitions LLC · Government Procurement & Supplier Coordination
+</footer>
+
 </body>
 </html>
